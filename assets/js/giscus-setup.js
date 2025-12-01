@@ -20,7 +20,7 @@ function determineGiscusTheme() {
     src: "https://giscus.app/client.js",
     "data-repo": "bhaswata08/bhaswata08.github.io",
     "data-repo-id": "",
-    "data-category": "Comments",
+    "data-category": "Announcements",
     "data-category-id": "",
     "data-mapping": "title",
     "data-strict": "1",
