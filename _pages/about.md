@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: \"Mathematics is the most beautiful and most powerful creation of the human spirit" Stefan Banach
 
 profile:
   align: right
