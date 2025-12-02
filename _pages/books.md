@@ -1,13 +1,38 @@
 ---
 layout: book-shelf
 title: bookshelf
-permalink: /books/
-nav: false
-collection: books
+permalink: /reading_list/
+nav: true
+collection: reading_list
 ---
 
-> What an astonishing thing a book is. It's a flat object made from a tree with flexible parts on which are imprinted lots of funny dark squiggles. But one glance at it and you're inside the mind of another person, maybe somebody dead for thousands of years. Across the millennia, an author is speaking clearly and silently inside your head, directly to you. Writing is perhaps the greatest of human inventions, binding together people who never knew each other, citizens of distant epochs. Books break the shackles of time. A book is proof that humans are capable of working magic.
->
-> -- Carl Sagan, Cosmos, Part 11: The Persistence of Memory (1980)
+## Papers that I am reading, have read, or will read
 
-## Books that I am reading, have read, or will read
+### Reading queue
+
+- [] [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+- [] []
+
+## Optimizers sequence to study
+
+- [x] Newton Ralphson
+- [x] SGD
+- [x] Momentum based SGD
+- [x] Nesterov Based SGD
+- [x] AdaGrad
+- [x] RMSProp
+- [x] AdaDelta
+- [x] Adam
+- [] AdaMax and MaxProp
+- [] Nadam
+- [] AMSGrad
+- [] AdaBound/AMSBound
+- [] AdamW
+- [] RAdam
+- [] Lookahead
+- [] Ranger
+- [] Layer-wise adaptive moments(LAMB)
+- [] Shampoo/Distributed Shampoo
+- [] Sophia
+- [] Muon
+- [] Schedule free optimizers
