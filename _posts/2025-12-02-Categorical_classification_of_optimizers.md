@@ -34,7 +34,6 @@ These optimizers focus on making the **effective learning rate** ($\eta_{eff}$) 
 - AdaGrad
 - RMSProp
 - AdaDelta
-  j
 
 ### Category 3: Hybrid (Momentum + Adaptive $\eta$)
 
