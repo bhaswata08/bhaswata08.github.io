@@ -201,6 +201,7 @@ exclude:
   - _pages/projects.md
   - _pages/dropdown.md
   - ignored_posts/
+  - old_news/
 keep_files:
   - CNAME
   - .nojekyll
