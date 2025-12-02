@@ -87,7 +87,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Deep Deep Learning # blog_name will be displayed in your blog page
-blog_description: an mathematical look into Deep learning 
+blog_description: an mathematical look into Deep learning
 permalink: /blog/:year/:title/
 lsi: true # produce an index for related posts
 
@@ -293,8 +293,7 @@ scholar:
   details_dir: bibliography
   details_link: Details
 
-  # query: "@*"
-  query: ""
+  query: "@*"
   group_by: year
   group_order: descending
 
