@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-a-mathematical-understanding-of-adadelta-optimzer",
+        },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/2025-12-02-Categorical_classification_of_optimizers/";
+          
+        },
+      },{id: "post-a-mathematical-understanding-of-adadelta-optimzer",
         
           title: "A mathematical understanding of AdaDelta Optimzer",
         
