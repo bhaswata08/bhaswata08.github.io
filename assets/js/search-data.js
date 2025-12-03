@@ -27,7 +27,7 @@ ninja.data = [{
         
           title: "A mathematical intuition behind adam",
         
-        description: "TODO",
+        description: "Understanding the mathematical foundations of the Adam optimizer, including the necessity and derivation of bias correction",
         section: "Posts",
         handler: () => {
           
