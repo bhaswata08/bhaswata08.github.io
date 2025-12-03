@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Study Guide: Categorizing Deep Learning Optimizers by Modification Type
+title: Categorizing Deep Learning Optimizers by Modification Type
 date: 2025-12-02 16:21
 description: This metapost classifies popular optimizers based on their core modifications—Momentum, Adaptive Learning Rates, or a Hybrid approach—serving as a Table of Contents for a structured deep dive.
 tags: Optimizers
