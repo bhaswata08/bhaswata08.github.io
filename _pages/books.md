@@ -10,8 +10,7 @@ collection: reading_list
 
 ### Reading queue
 
-- [] [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
-- [] []
+- [ ] [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 
 ## Optimizers sequence to study
 
@@ -23,16 +22,16 @@ collection: reading_list
 - [x] RMSProp
 - [x] AdaDelta
 - [x] Adam
-- [] AdaMax and MaxProp
-- [] Nadam
-- [] AMSGrad
-- [] AdaBound/AMSBound
-- [] AdamW
-- [] RAdam
-- [] Lookahead
-- [] Ranger
-- [] Layer-wise adaptive moments(LAMB)
-- [] Shampoo/Distributed Shampoo
-- [] Sophia
-- [] Muon
-- [] Schedule free optimizers
+- [ ] AdaMax and MaxProp
+- [ ] Nadam
+- [ ] AMSGrad
+- [ ] AdaBound/AMSBound
+- [ ] AdamW
+- [ ] RAdam
+- [ ] Lookahead
+- [ ] Ranger
+- [ ] Layer-wise adaptive moments(LAMB)
+- [ ] Shampoo/Distributed Shampoo
+- [ ] Sophia
+- [ ] Muon
+- [ ] Schedule free optimizers
