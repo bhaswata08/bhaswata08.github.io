@@ -23,15 +23,26 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-",
+        },{id: "post-a-mathematical-intuition-behind-adam",
         
-          title: "",
+          title: "A mathematical intuition behind adam",
         
-        description: "",
+        description: "TODO",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/2025-12-02-Categorical_classification_of_optimizers/";
+            window.location.href = "/blog/2025/adam/";
+          
+        },
+      },{id: "post-categorizing-deep-learning-optimizers-by-modification-type",
+        
+          title: "Categorizing Deep Learning Optimizers by Modification Type",
+        
+        description: "This metapost classifies popular optimizers based on their core modifications—Momentum, Adaptive Learning Rates, or a Hybrid approach—serving as a Table of Contents for a structured deep dive.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Categorical_classification_of_optimizers/";
           
         },
       },{id: "post-a-mathematical-understanding-of-adadelta-optimzer",
