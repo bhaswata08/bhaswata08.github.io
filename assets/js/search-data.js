@@ -23,18 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-nag",
-        
-          title: "Nag",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/NAG/";
-          
-        },
-      },{id: "post-an-introduction-to-optimizers-for-deep-learning",
+        },{id: "post-an-introduction-to-optimizers-for-deep-learning",
         
           title: "An Introduction to Optimizers for Deep learning",
         
