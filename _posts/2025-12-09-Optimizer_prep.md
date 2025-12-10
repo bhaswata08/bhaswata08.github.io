@@ -68,7 +68,7 @@ Where $v_t = v_{t-1} + g_t^2$,
 
 AdaGrad assigns higher learning rates to parameters with infrequent updates (sparse features) and lower learning rates to parameters with frequent updates (dense features).
 
-AdaGrad will be explained in detail in the subsequent posts. #TODO
+AdaGrad will be explained in detail in the subsequent posts.
 
 ### Examples
 
