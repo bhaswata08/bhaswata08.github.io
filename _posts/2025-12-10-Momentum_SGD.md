@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Momentum-Based Gradient Descent
+title: Momentum Based Stochastic Gradient Descent
 date: 2025-12-10 17:20
 description: Understanding how momentum accelerates gradient descent by accumulating velocity from past gradients, using exponentially weighted moving averages to overcome slow convergence in low-gradient regions
 tags: Optimizers
