@@ -11,10 +11,11 @@ chart:
 
 # Goals
 
-This post provides a pedagogical classification of optimizers based on how they modify gradient updates and learning rates, along with the intuition behind this framework. It does not explain individual optimizers in detail—those will be covered in separate dedicated posts (#TODO).
+This post provides a pedagogical classification of optimizers based on how they modify gradient updates and learning rates, along with the intuition behind this framework. It also serves as a Table of contents for this series. Individual optimizers will be covered in detail in separate, dedicated posts linked below.
 
 # Introduction
 
+All deep learning optimizers fundamentally modify the **Stochastic Gradient Descent (SGD)** update rule to improve convergence speed and stability.
 Refer to Parameter Update Rule for Stochastic Gradient Descent(SGD).
 
 $$\theta_t = \theta_{t-1} - \eta g_t$$
@@ -24,32 +25,19 @@ $$\theta_t = \theta_{t-1} - \eta g_t$$
 - $g\_t$ is the gradient with respect to parameters at timestep t.
 - $\Delta \theta\_t = \theta\_t - \theta\_{t-1}$
 
-We are going to modify the equation this way.
+Optimizers introduce complexity by modifying this equation to look more like this:
 
 $$\theta_t = \theta_{t-1} - \eta_{eff} \hat{g_t}$$
 
-All the optimizers fundamentally modify either effective learning rate $\eta_{eff}$ or the effective gradient updates $\hat{g_t}$ or a combination of both.
+All the optimizers fundamentally modify either effective learning rate ($\eta_{eff}$) or the effective gradient updates ($\hat{g_t}$) or a combination of both.
 
-## Examples of optimizers that modify $\hat{g_t}$
+## Category 1: Optimizers that modify the gradient $\hat{g_t}$ (Momentum/velocity modifiers)
 
-- Momentum based Gradient Descent
-- Nestrov Accelerated Gradient Descent
+These optimizers focus on modifying the **effective gradient direction** ($\hat{g_t}$) via history accumulation (momentum) while maintaining a fixed global learning rate ($\eta$).
 
-## Examples of optimizers that modify $\eta_{eff}$
+### Intuition
 
-- AdaGrad
-- RMSProp
-- AdaDelta
-
-## Examples of optimizers that modify both $\eta_{eff}$ and $\hat{g_t}$
-
-- Adam
-- AdaMax
-- NAdam
-
-# Intuition behind modifying $\eta_{eff}$ and $\hat{g_t}$
-
-## Modification of effective gradient updates.
+The modification of $\hat{g_t}$ is about using gradient history to determine the direction and magnitude of the current step. Instead of blindly following the current gradient $g_t$, we incorporate information from past gradients to make smarter directional choices.
 
 Take momentum based gradient descent for example,
 
@@ -57,9 +45,20 @@ $$\hat{g_t} = \beta \hat{g_{t-1}} + g_t$$
 
 Momentum based gradient descent will be explained in detail in the next post. #TODO
 
-The modification of $\hat{g_t}$ is about using gradient history to determine the direction and magnitude of the current step. Instead of blindly following the current gradient $g_t$, we incorporate information from past gradients to make smarter directional choices. This is essentially akin to modifying the momentum or how much energy does the gradient updates($g_t$) have and how it will react to plateaus and valleys. In both momentum based gradient descent and Nestrov based gradient descent we give additional energy to the gradient updates in plateaus so that it takes larger steps (Intuition and nuances behind this explained in #TODO).
+This is essentially akin to modifying the momentum or how much energy does the gradient updates($g_t$) have and how it will react to plateaus and valleys. Giving the update "energy" so it can barrel through shallow local minima or traverse flat plateaus more quickly.
 
-## Modification of effective learning rate
+### Examples
+
+- Momentum based Gradient Descent #TODO
+- Nestrov Accelerated Gradient Descent #TODO
+
+## Category 2: Modifying learning rate $\eta_{eff}$ (Adaptive learning rate modifiers)
+
+These optimizers focus on making the effective learning rate parameter-specific and adaptive, usually inversely proportional to the history of squared gradients.
+
+### Intuition
+
+The goal behind modifying the effective learning rate is to assign parameter wise adaptation of effective updates ($\Delta \theta_t$). Say our model is vectorized by two parameters $w$ and $b$. Now, say $w$'s loss landscape is steep and hence requires low learning rate (to avoid overshoot) and $b$'s loss landscape is flat and requires high learning rate (to learn effectively).
 
 Take AdaGrad for example:
 
@@ -71,4 +70,22 @@ AdaGrad assigns higher learning rates to parameters with infrequent updates (spa
 
 AdaGrad will be explained in detail in the subsequent posts. #TODO
 
-The point behind modifying the effective learning rate is to assign parameter wise adaptation of effective updates ($\Delta \theta_t$). Say our model is vectorized by two parameters $w$ and $b$. Now, say $w$'s loss landscape is steep and hence requires low learning rate(to avoid overshoot) and $b$'s loss landscape is flat and requires high learning rate(to learn effectively). Modification of effective learning rate in optimizers make it so that this is handled. Details for this will be discussed in #TODO
+### Examples
+
+- AdaGrad
+- RMSProp
+- AdaDelta
+
+## Category 3: Hybrid (Momentum + Adaptive $\eta$)
+
+These methods combine the direction smoothing of Momentum (Category 1) with the per-parameter scaling of Adaptive $\eta$ (Category 2). They are the default choice for many modern applications.
+
+### The Intuition
+
+By combining both techniques, these optimizers gain the speed of momentum on plateaus and the stability of adaptive learning rates in steep valleys.
+
+### Examples
+
+- Adam (Adaptive Moment Estimation) (#TODO: Link to post)
+- AdaMax (#TODO: Link to post)
+- NAdam (Nesterov-accelerated Adam) (#TODO: Link to post)
