@@ -23,7 +23,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-an-introduction-to-optimizers-for-deep-learning",
+        },{id: "post-placeholder",
+        
+          title: "PLACEHOLDER",
+        
+        description: "PLACEHOLDER",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/testing/";
+          
+        },
+      },{id: "post-momentum-based-stochastic-gradient-descent",
+        
+          title: "Momentum Based Stochastic Gradient Descent",
+        
+        description: "Understanding how momentum accelerates gradient descent by accumulating velocity from past gradients, using exponentially weighted moving averages to overcome slow convergence in low-gradient regions",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Momentum/";
+          
+        },
+      },{id: "post-an-introduction-to-optimizers-for-deep-learning",
         
           title: "An Introduction to Optimizers for Deep learning",
         
