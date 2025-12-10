@@ -149,3 +149,25 @@ Momentum is inspired by physics, where we roll a ball down the hill.
 - You don't want to average forces, you want to build up speed.
 - With $\beta = 0.9$ if you apply normalized EMA, the effective scaling factor is $\frac{1}{1-0.9} = 10$ i.e. you will scale the gradients 10x larger than vanilla SGD.
 - With unnormalized EWMA, the coefficients sum to approximately $\frac{1}{1-\beta} = 10$, which naturally amplifies the accumulated gradient, allowing momentum to build up speed—this is the desired behavior for momentum-based optimization.
+
+# Issues with momentum based Gradient descent
+
+Refer to the comparison video:
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/mgd_sigmoid_loss3.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+    </div>
+</div>
+
+You can see that Momentum based SGD Oscillates in and out of the minima valley as the momentum carries it out of the valley. It takes a lot of U-turns before finally converging.
+
+However despite taking a lot of U-turns, it still converges faster than vanilla SGD.
+
+Can anything be done about these oscillations?
+NEXT POST: Nesterov Based Gradient Descent (NAG) #TODO
+
+# REFERENCES:
+
+- [Momentum based Gradient Descent](https://youtu.be/R3jlvdclAHI?si=9YdCLK-V4IDegAlf)
+- [Exponentially weighted moving averages(EWMA)](https://youtu.be/XV1f_srZg_E?si=QM3_efpAygFrnPXw)
