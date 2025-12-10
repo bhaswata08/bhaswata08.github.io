@@ -27,7 +27,7 @@ ninja.data = [{
         
           title: "An Introduction to Optimizers for Deep learning",
         
-        description: "Optimizers are the key to efficiently training deep learning models. This post introduces the fundamental principles behind them, explaining how standard Stochastic Gradient Descent (SGD) is modified by advanced optimizers like Momentum, AdaGrad, and Adam.",
+        description: "This post introduces a fundamental classification of deep learning optimizers, categorizing them based on whether they modify the gradient direction (Momentum), the parameter-specific learning rate (Adaptive η), or both (Hybrid). It provides the core intuition behind these modifications to the standard SGD update rule, serving as a pedagogical framework and a table of contents for the detailed posts in this series.",
         section: "Posts",
         handler: () => {
           
@@ -38,7 +38,7 @@ ninja.data = [{
         
           title: "A mathematical intuition behind adam",
         
-        description: "Understanding the mathematical foundations of the Adam optimizer, including the necessity and derivation of bias correction",
+        description: "A mathematical analysis of the Adam (Adaptive Moment Estimation) optimizer. This post details how Adam combines momentum and adaptive learning rates (hybrid approach), focusing on the critical role and derivation of bias correction to prevent stalled updates during the early stages of training.",
         section: "Posts",
         handler: () => {
           
@@ -49,7 +49,7 @@ ninja.data = [{
         
           title: "A mathematical understanding of AdaDelta Optimzer",
         
-        description: "Post describing the optimization of gradients with AdaDelta Optimizer",
+        description: "A mathematical deep dive into the AdaDelta optimizer. This post explains how it eliminates the need for a manual global learning rate (η) by using a dimensionally consistent ratio of past RMS steps and current RMS gradients, leading to self-correcting, adaptive updates.",
         section: "Posts",
         handler: () => {
           
