@@ -15,7 +15,7 @@ This post provides a pedagogical classification of optimizers based on how they 
 
 # Introduction
 
-All deep learning optimizers fundamentally modify the **Stochastic Gradient Descent (SGD)** update rule to improve convergence speed and stability.
+All deep learning optimizers fundamentally modify the Stochastic Gradient Descent (SGD) update rule to improve convergence speed and stability.
 Refer to Parameter Update Rule for Stochastic Gradient Descent(SGD).
 
 $$\theta_t = \theta_{t-1} - \eta g_t$$
@@ -50,11 +50,11 @@ This is essentially akin to modifying the momentum or how much energy does the g
 ### Examples
 
 - Momentum based Gradient Descent #TODO
-- Nestrov Accelerated Gradient Descent #TODO
+- Nesterov Accelerated Gradient Descent #TODO
 
 ## Category 2: Modifying learning rate $\eta_{eff}$ (Adaptive learning rate modifiers)
 
-These optimizers focus on making the effective learning rate parameter-specific and adaptive, usually inversely proportional to the history of squared gradients.
+These optimizers focus on making the **effective learning rate** parameter-specific and adaptive, usually inversely proportional to the history of squared gradients.
 
 ### Intuition
 
@@ -72,20 +72,20 @@ AdaGrad will be explained in detail in the subsequent posts. #TODO
 
 ### Examples
 
-- AdaGrad
-- RMSProp
-- AdaDelta
+- AdaGrad (#TODO)
+- RMSProp (#TODO)
+- [AdaDelta]({% post_url 2025-12-01-Adadelta %})
 
 ## Category 3: Hybrid (Momentum + Adaptive $\eta$)
 
 These methods combine the direction smoothing of Momentum (Category 1) with the per-parameter scaling of Adaptive $\eta$ (Category 2). They are the default choice for many modern applications.
 
-### The Intuition
+### Intuition
 
 By combining both techniques, these optimizers gain the speed of momentum on plateaus and the stability of adaptive learning rates in steep valleys.
 
 ### Examples
 
-- Adam (Adaptive Moment Estimation) (#TODO: Link to post)
+- [Adam (Adaptive Moment Estimation)]({% post_url 2025-12-02-adam %})
 - AdaMax (#TODO: Link to post)
 - NAdam (Nesterov-accelerated Adam) (#TODO: Link to post)
