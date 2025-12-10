@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-a-mathematical-intuition-behind-adam",
+        },{id: "post-an-introduction-to-optimizers-for-deep-learning",
+        
+          title: "An Introduction to Optimizers for Deep learning",
+        
+        description: "Optimizers are the key to efficiently training deep learning models. This post introduces the fundamental principles behind them, explaining how standard Stochastic Gradient Descent (SGD) is modified by advanced optimizers like Momentum, AdaGrad, and Adam.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Optimizer_prep/";
+          
+        },
+      },{id: "post-a-mathematical-intuition-behind-adam",
         
           title: "A mathematical intuition behind adam",
         
