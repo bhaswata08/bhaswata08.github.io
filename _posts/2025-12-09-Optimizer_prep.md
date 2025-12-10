@@ -2,7 +2,7 @@
 layout: post
 title: An Introduction to Optimizers for Deep learning
 date: 2025-12-09 22:00
-description: Optimizers are the key to efficiently training deep learning models. This post introduces the fundamental principles behind them, explaining how standard Stochastic Gradient Descent (SGD) is modified by advanced optimizers like Momentum, AdaGrad, and Adam.
+description: This post introduces a fundamental classification of deep learning optimizers, categorizing them based on whether they modify the gradient direction (Momentum), the parameter-specific learning rate (Adaptive η), or both (Hybrid). It provides the core intuition behind these modifications to the standard SGD update rule, serving as a pedagogical framework and a table of contents for the detailed posts in this series.
 tags: Optimizers
 categories: Optimizers
 chart:
