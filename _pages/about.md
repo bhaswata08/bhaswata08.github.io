@@ -37,8 +37,6 @@ I'm transitioning from applied AI agents to foundational model research. Current
 
 **Beyond code:** I've played guitar for 13 years, train in powerlifting, have professional cooking training, and prefer reading research papers to most human conversations. LLMs are more consistent reasoning partners than people.
 
----
-
 ## Technical Stack
 
 ### Foundations
@@ -71,8 +69,6 @@ I'm transitioning from applied AI agents to foundational model research. Current
 - **Production:** Systems deployed at BEL, Federal Bank of India
 - **Inference:** vLLM optimization, latency reduction (40s → 7s on text2sql)
 
----
-
 ## Key Projects
 
 ### Bhasini Indic Parallel Corpus
@@ -99,16 +95,12 @@ Trained adversarial model to eliminate length bias in Sanskrit sutra classificat
 
 Designed and implemented custom multi-agent systems for complex reasoning tasks. Architectures focus on decomposition strategies, tool use optimization, and reliable information synthesis.
 
----
-
 ## Achievements
 
 - **Open Source AI Hackathon Winner**
 - **Production Deployments:** BEL (Bharat Electronics Limited), Federal Bank of India
 - **Data Creation:** 1.5M parallel corpus for national language mission
 - **Performance:** 5.7x inference optimization on production systems
-
----
 
 ## Research Interests
 
@@ -119,8 +111,6 @@ Designed and implemented custom multi-agent systems for complex reasoning tasks.
 
 _Currently upskilling in foundational model training—moving from applied agent systems to core research in model development and training dynamics._
 
----
-
 ## Writing & Research Notes
 
 I write about the mathematical foundations of modern AI systems—optimizer theory, training dynamics, and the theoretical underpinnings that most practitioners skip. My technical writing assumes comfort with graduate-level mathematics.
@@ -129,16 +119,12 @@ Current series: **Optimizer Theory Deep Dive** — tracking my exploration of op
 
 All posts available on this site with full LaTeX support for mathematical notation.
 
----
-
 ## What I'm Learning
 
 - Foundational model training and scaling
 - Optimizer theory and training dynamics
 - Advanced training techniques and stability analysis
 - Mathematical foundations of transformer architectures
-
----
 
 ## Career Goals
 
@@ -147,8 +133,6 @@ All posts available on this site with full LaTeX support for mathematical notati
 **Long-term:** Build a frontier model. Lead research in training dynamics and optimization theory.
 
 **Open to:** Research collaborations, foundational model opportunities, and conversations about optimizer theory over coffee (or async over LLM chat—honestly prefer the latter).
-
----
 
 ## Contact
 
