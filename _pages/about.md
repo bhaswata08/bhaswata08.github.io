@@ -8,7 +8,7 @@ profile:
   align: right
   image: headshot.jpg
   image_circular: true # crops the image to make it circular
-  more_info: >
+  more_info: |
     Dev env:
       - Neovim
       - Arch Linux
@@ -38,4 +38,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Just your regular GenAI guy.
+I like reading and writing things. Just your regular GenAI guy.

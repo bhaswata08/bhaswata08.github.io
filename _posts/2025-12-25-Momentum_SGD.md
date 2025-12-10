@@ -1,0 +1,151 @@
+---
+layout: post
+title: Momentum-Based Gradient Descent
+date: 2025-12-10 17:20
+description: Understanding how momentum accelerates gradient descent by accumulating velocity from past gradients, using exponentially weighted moving averages to overcome slow convergence in low-gradient regions
+tags: Optimizers
+categories: Optimizers
+chart:
+  plotly: false
+---
+
+# Introduction
+
+Refer to Parameter Update Rule for Stochastic Gradient Descent(SGD).
+
+$$\theta_t = \theta_{t-1} - \eta g_t$$
+
+$$\implies \Delta theta_t = -\eta g_t$$
+
+$$\implies \Delta theta_t \propto g_t$$
+
+In vanilla Stochastic Gradient Descent (SGD), updates/step size is directly proportional to the gradient $g_t$. In areas with low slope, $g_t$ is low, hence learning is slow, hence SGD is extremely slow to converge.
+
+## Intuition behind momentum based gradient descent
+
+Imagine you are driving a car trying to reach a destination A. You are navigating without a map and must rely entirely on asking passersby for directions.
+
+1. First Step: You ask the first person for directions. They tell you the destination is North. You take a small step (a small distance) to the North.
+
+2. Second Step: You ask a second person. They also say the destination is North. Because two consecutive sources confirm the direction, you gain confidence and take a slightly larger step to the North.
+
+3. Subsequent Steps: You repeat this. A third person says North. Now, with high confidence established by consistent past directions, you decide to take an even larger, faster step towards the North.
+
+4. Correction: After a certain number of steps, you are close to the destination. A new passerby says the destination is now South. Because you have accumulated significant forward momentum, you do not immediately stop and turn sharply. Instead, your existing forward velocity damps the sudden reverse direction, causing you to slow down and take a much smaller net step towards the South than the new direction would otherwise suggest
+
+5. Convergence: Eventually, this damping effect stabilizes your movement. You continue to take smaller steps back and forth (oscillate) until your accumulated momentum and the current step size naturally shrink, bringing you to rest at your final destination.
+
+This is essentially the intuition behind momentum.
+
+As per the introductory post behind [optimizers]({% post_url 2025-12-09-Optimizer_prep %}), we classify them under Category 1, gradient modifiers.
+
+Let's unroll the formula for momentum based gradient descent.
+
+$$\Delta theta_t \propto \hat{g_t}$$
+
+Where,
+
+$$\hat{g_t} = \sum_{\tau = 0}^t \beta^{t-\tau} g_\tau$$
+
+$$\hat{g_t} = \beta^0 g_t + \beta g_{t-1} + \beta^2 g_{t-2} + \beta^3 g_{t-3} + \beta^4 g_{t-4} + ... + \beta^t g_0$$
+
+Now typically $\beta = 0.9$ for momentum based gradient descent.
+
+| $\beta$   | Value       | Effect on g_t      |
+| --------- | ----------- | ------------------ |
+| $\beta^0$ | 1           | Most effect        |
+| $\beta^1$ | 0.9         | lesser effect      |
+| $\beta^2$ | 0.81        | even lesser effect |
+| $\beta^3$ | 0.73        | even lesser effect |
+| $\beta^4$ | 0.65        | even lesser effect |
+| $\dots$   | $\dots$     |                    |
+| $\beta^t$ | $\approx 0$ | almost no effect   |
+
+i.e. from the formula, the effect of past gradients is monotonically decreasing where higher powers of $\beta$ have almost no effect.
+
+i.e. As we are farther away from the current step, we give monotonically decreasing weightage to the past gradients. This gives us Exponentially Weighted Moving Average (EWMA) of the past gradients.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include video.liquid path="assets/video/mgd_sigmoid_loss3.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+    </div>
+</div>
+
+### Formulation of Momentum based gradient descent
+
+The momentum term, which we call the Velocity Vector $\hat{g_t}$ is the exponentially weighted moving average of the past gradients.
+
+$$\hat{g_t} = \sum_{\tau = 0}^t \beta^{t-\tau} g_\tau$$
+
+OR
+
+$$\hat{g_t} = \beta \hat{g_{t-1}} + g_t$$
+
+Whose gradient update rule becomes:
+
+$$\theta_t = \theta_{t-1} - \eta \hat{g_t}$$
+
+This is mathematically equivalent to:
+
+$$v_{t} = \beta v_{t-1} + g_t$$
+
+With this notation, gradient descent update rule becomes:
+
+$$\theta_t = \theta_{t-1} - \eta v_t$$
+
+Where, $v_0 = 0$ and $v_1 = \beta * 0 + g_1 = g_1$
+
+In simpler words: $v_t$ is equivalent to $\hat{g_t}$.
+
+Both are conveying the same information but with different notations. This is mentioned because the latter is the standard notation, but throughout the blog series we use the first notation for better understanding and discrimination.
+
+## A small nuance on the notations
+
+Readers might find that sometimes momentum is also represented by the following (especially in case of RMSprop or Adam #TODO)
+
+$$\hat{g_t} = (1-\beta)\sum_{\tau = 0}^t (\beta)^{t-\tau} g_\tau$$
+
+OR
+
+$$\hat{g_t} = \beta \hat{g_{t-1}} + (1-\beta) g_t$$
+
+This is called the Exponentially Moving Average (EMA).
+
+### Difference between EWMA (unnormalized) and EMA (normalized)
+
+Momentum uses unnormalized EWMA.
+
+$$\hat{g_t} = \beta \hat{g_{t-1}} + g_t$$
+
+While in the second case it is normalized EMA.
+
+$$\hat{g_t} = \beta \hat{g_{t-1}} + (1-\beta) g_t$$
+
+Unrolling the equation for Momentum:
+
+$$\hat{g_t} = \beta^0 g_t + \beta g_{t-1} + \beta^2 g_{t-2} + \beta^3 g_{t-3} + \beta^4 g_{t-4} + ... + \beta^t g_0$$
+
+The coefficients add up:
+
+$$1 + \beta + \beta^2 +\beta^3 + \dots + \beta^t= \frac{1-\beta^{t+1}}{1-\beta}$$
+
+Now assuming number of iterations is extremely large and with $\beta = 0.9$, $1-\beta^{t+1} \approx 1$
+
+$$\implies 1 + \beta + \beta^2 +\beta^3 + \dots + \beta^t= \frac{1}{1-\beta}$$
+
+Similarly unrolling the second normalized EWA equation.
+
+$$\hat{g_t} = (1-\beta)\sum_{\tau = 0}^t (\beta)^{t-\tau} g_\tau$$
+
+We will get sum of coefficients as:
+
+$$(1-\beta)( 1 + \beta + \beta^2 +\beta^3 + \dots + \beta^t )= 1$$
+
+#### Why use unnormalized EWMA in momentum?
+
+Momentum is inspired by physics, where we roll a ball down the hill.
+
+- Velocity accumulates from forces (gradients) over time.
+- You don't want to average forces, you want to build up speed.
+- With $\beta = 0.9$ if you apply normalized EMA, the effective scaling factor is $\frac{1}{1-0.9} = 10$ i.e. you will scale the gradients 10x larger than vanilla SGD.
+- With unnormalized EWMA, the coefficients sum to approximately $\frac{1}{1-\beta} = 10$, which naturally amplifies the accumulated gradient, allowing momentum to build up speed—this is the desired behavior for momentum-based optimization.
