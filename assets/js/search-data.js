@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-an-introduction-to-exponentially-weighted-moving-averages",
+        },{id: "post-adamax-adam-with-l-norm-for-sparse-gradients",
+        
+          title: "AdaMax : Adam with L∞ Norm for Sparse Gradients",
+        
+        description: "AdaMax stabilizes training on sparse data by replacing Adam&#39;s L2 norm with L-infinity. Includes math derivations, loss curve comparisons, and a practical guide on when to use which.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/AdaMax/";
+          
+        },
+      },{id: "post-an-introduction-to-exponentially-weighted-moving-averages",
         
           title: "An introduction to Exponentially Weighted Moving Averages",
         
