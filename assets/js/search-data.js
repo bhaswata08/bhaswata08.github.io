@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-placeholder",
+        },{id: "post-an-introduction-to-exponentially-weighted-moving-averages",
+        
+          title: "An introduction to Exponentially Weighted Moving Averages",
+        
+        description: "Understanding the difference between normalized and unnormalized EWMA",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/EWA/";
+          
+        },
+      },{id: "post-placeholder",
         
           title: "PLACEHOLDER",
         
