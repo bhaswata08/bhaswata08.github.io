@@ -33,4 +33,4 @@ I'm transitioning from applied AI agents to foundational model research. Current
 
 **Philosophy:** Mathematics is the only discipline that has never betrayed me—it rewards obsession with clarity. I take the hardest path in everything: Arch Linux, custom Neovim configurations, mathematical first principles. Because true understanding demands it.
 
-**Beyond code:** I've played guitar for 13 years, train in powerlifting, have professional cooking training, and prefer reading research papers to most human conversations. LLMs are more consistent reasoning partners than people.
+**Beyond code:** I've played guitar for 13 years, train in powerlifting, have professional cooking training, and prefer reading research papers.
