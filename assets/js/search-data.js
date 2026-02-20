@@ -45,17 +45,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/EWA/";
           
         },
-      },{id: "post-placeholder",
-        
-          title: "PLACEHOLDER",
-        
-        description: "PLACEHOLDER",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/NAG/";
-          
-        },
       },{id: "post-momentum-based-stochastic-gradient-descent",
         
           title: "Momentum Based Stochastic Gradient Descent",
