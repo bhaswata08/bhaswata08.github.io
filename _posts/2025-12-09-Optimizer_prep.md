@@ -51,7 +51,7 @@ This is essentially akin to modifying the momentum or how much energy does the g
 ### Examples
 
 - [Momentum based Gradient Descent]({% post_url 2025-12-10-Momentum %})
-- [Nesterov Accelerated Gradient Descent]({% post_url 2025-12-10-NAG %})
+- [Nesterov Accelerated Gradient Descent](#TODO)
 
 
 ## Category 2: Modifying learning rate $\eta_{eff}$ (Adaptive learning rate modifiers)
