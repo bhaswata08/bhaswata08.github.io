@@ -43,14 +43,16 @@ Take momentum based gradient descent for example,
 
 $$\hat{g_t} = \beta \hat{g_{t-1}} + g_t$$
 
-Momentum based gradient descent will be explained in detail in the next post. #TODO
+Momentum based gradient descent will be explained in detail in the next post - [Momentum]({% post_url 2025-12-10-Momentum %})
+
 
 This is essentially akin to modifying the momentum or how much energy does the gradient updates($g_t$) have and how it will react to plateaus and valleys. Giving the update "energy" so it can barrel through shallow local minima or traverse flat plateaus more quickly.
 
 ### Examples
 
-- Momentum based Gradient Descent #TODO
-- Nesterov Accelerated Gradient Descent #TODO
+- [Momentum based Gradient Descent]({% post_url 2025-12-10-Momentum %})
+- [Nesterov Accelerated Gradient Descent]({% post_url 2025-12-10-NAG %})
+
 
 ## Category 2: Modifying learning rate $\eta_{eff}$ (Adaptive learning rate modifiers)
 
@@ -87,5 +89,5 @@ By combining both techniques, these optimizers gain the speed of momentum on pla
 ### Examples
 
 - [Adam (Adaptive Moment Estimation)]({% post_url 2025-12-02-adam %})
-- AdaMax (#TODO: Link to post)
-- NAdam (Nesterov-accelerated Adam) (#TODO: Link to post)
+- [AdaMax]({% post_url 2025-12-11-AdaMax %})
+- [NAdam (Nesterov-accelerated Adam)](#TODO: Link to post)
