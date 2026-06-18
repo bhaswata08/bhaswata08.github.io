@@ -23,7 +23,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-adamax-adam-with-l-norm-for-sparse-gradients",
+        },{id: "post-adadelta",
+        
+          title: "AdaDelta",
+        
+        description: "PLACEHOLDER",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/AdaGrad/";
+          
+        },
+      },{id: "post-eigenvalues-and-eigenvectors",
+        
+          title: "Eigenvalues and Eigenvectors",
+        
+        description: "PLACEHOLDER",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/eigenval_and_eigenvec/";
+          
+        },
+      },{id: "post-adamax-adam-with-l-norm-for-sparse-gradients",
         
           title: "AdaMax : Adam with L∞ Norm for Sparse Gradients",
         
