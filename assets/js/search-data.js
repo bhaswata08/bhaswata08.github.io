@@ -23,11 +23,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-adadelta",
+        },{id: "post-newton-raphson",
         
-          title: "AdaDelta",
+          title: "Newton-Raphson",
         
         description: "PLACEHOLDER",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/newton-raphson/";
+          
+        },
+      },{id: "post-adagrad",
+        
+          title: "AdaGrad",
+        
+        description: "WIP",
         section: "Posts",
         handler: () => {
           
@@ -38,7 +49,7 @@ ninja.data = [{
         
           title: "Eigenvalues and Eigenvectors",
         
-        description: "PLACEHOLDER",
+        description: "WIP",
         section: "Posts",
         handler: () => {
           
