@@ -2,7 +2,7 @@
 layout: post
 title: Eigenvalues and Eigenvectors
 date: 2026-02-23 16:56
-description: PLACEHOLDER
+description: WIP
 tags: Basics
 categories: Basics
 chart:
